@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191d1b">
+  <meta name="description" content="Four curious exhibits. One mystery creator. An interactive science detective case.">
+  <title>The Curious Files — Science Mystery</title>
+  <link rel="icon" href="./favicon.ico" sizes="32x32">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./js/app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#screen">Skip to the case</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" id="home-link" href="./" aria-label="The Curious Files home">
+        <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="17" cy="17" r="10"/><path d="m25 25 10 10"/><path d="M12 17h10m-5-5v10"/></svg></span>
+        <span>THE CURIOUS FILES<small>DETECTIVE WORK. CURIOUS SCIENCE.</small></span>
+      </a>
+      <nav class="header-tools" aria-label="Case tools">
+        <button type="button" class="tool-button" id="notebook-open" aria-label="Evidence notebook"><span aria-hidden="true">▤</span> <span>Evidence notebook</span><span class="count-badge" id="notebook-count" aria-hidden="true">0</span></button>
+        <button type="button" class="tool-button" id="settings-open" aria-label="Settings"><span aria-hidden="true">⚙</span> <span>Settings</span></button>
+      </nav>
+    </header>
+
+    <section class="case-dashboard" aria-labelledby="case-file-title">
+      <span class="dossier-tab" aria-hidden="true">INVESTIGATION RECORD</span>
+      <div class="case-status" aria-label="Chapter status">
+        <div class="case-reference"><div class="case-identity"><p class="case-label">YOUR CURRENT DOSSIER</p><h2 id="case-file-title">Case file <span>001</span></h2></div><span class="case-state" id="phase-label">UNOPENED</span></div>
+        <div class="scoreboard"><span>SCORE</span><strong id="score" aria-live="polite">000</strong><span>/ 350</span></div>
+      </div>
+      <div class="progress-strip">
+        <ol class="progress-steps" aria-label="Chapter progress">
+          <li><span class="step-dot">01</span><span>First exhibit</span></li>
+          <li><span class="step-dot">02</span><span>Second exhibit</span></li>
+          <li><span class="step-dot">03</span><span>Third exhibit</span></li>
+          <li><span class="step-dot">04</span><span>Fourth exhibit</span></li>
+          <li><span class="step-dot">?</span><span>The reveal</span></li>
+        </ol>
+        <span class="progress-caption" id="progress-caption">0 / 4 clues collected</span>
+      </div>
+    </section>
+
+    <p class="notice" id="storage-warning" role="status" hidden></p>
+    <aside class="debug-panel" id="debug-panel" aria-label="Developer sandbox" hidden>
+      <strong>Developer sandbox — chapter results are not saved.</strong>
+      <span id="debug-order">Open the case to inspect its order.</span>
+      <button type="button" class="button button-small" id="debug-complete" disabled>Complete current puzzle</button>
+    </aside>
+
+    <main id="screen" tabindex="-1" aria-labelledby="screen-title">
+      <div class="loading-state"><p class="eyebrow">THE ARCHIVE IS OPENING</p><h1 id="screen-title">Gathering the evidence…</h1><p>If this message stays here, check that JavaScript is enabled and the files are served through the local Python server.</p></div>
+    </main>
+    <noscript><p class="notice">This game needs JavaScript. Enable it and reload the page. No account or internet connection is needed to play.</p></noscript>
+
+    <footer class="site-footer"><span><span class="status-dot" aria-hidden="true"></span> LOCAL EDITION</span><p>A little curiosity goes a long way.</p><span>NO TIMER. NO RUSH.</span></footer>
+  </div>
+
+  <dialog id="notebook-dialog" aria-labelledby="notebook-title">
+    <div class="dialog-heading"><div><p class="eyebrow">YOUR INVESTIGATION</p><h2 id="notebook-title">Evidence notebook</h2></div><button type="button" class="close-button" id="notebook-close" aria-label="Close notebook">×</button></div>
+    <div id="notebook-content"></div>
+  </dialog>
+  <dialog id="bonus-dialog" aria-labelledby="bonus-title" aria-describedby="bonus-warning-text">
+    <div class="dialog-heading"><p class="eyebrow">OPTIONAL FILE / NO POINTS</p><button type="button" class="close-button" id="bonus-close" aria-label="Close bonus evidence">×</button></div>
+    <h2 id="bonus-title" tabindex="-1">Bonus evidence</h2>
+    <div id="bonus-warning">
+      <p class="notice" id="bonus-warning-text" tabindex="-1">Strong language and personal insults ahead.</p>
+      <p class="quiet">Optional reading. No questions or points. Skipping will not change your case.</p>
+      <div class="result-actions"><button type="button" class="button button-primary" id="bonus-reveal">Open evidence</button><button type="button" class="button button-secondary" id="bonus-skip">Skip</button></div>
+    </div>
+    <div id="bonus-content" hidden></div>
+  </dialog>
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <div class="dialog-heading"><div><p class="eyebrow">KEEP IT YOUR WAY</p><h2 id="settings-title">Settings</h2></div><button type="button" class="close-button" id="settings-close" aria-label="Close settings">×</button></div>
+    <label class="setting-row" for="dark-mode-toggle"><span><strong>Dark mode</strong><small>A dimly lit investigation desk. Your choice stays saved in this browser.</small></span><input type="checkbox" id="dark-mode-toggle" aria-label="Dark mode"></label>
+    <label class="setting-row" for="sound-toggle"><span><strong>Sound effects</strong><small>One quiet chime when you restore an exhibit. Off by default.</small></span><input type="checkbox" id="sound-toggle" aria-label="Sound effects"></label>
+    <section class="data-settings"><h3>Your saved data</h3><p>Only completed results, theme, and sound preferences are saved in this browser. Unfinished investigations disappear when you leave.</p><button type="button" class="button button-danger" id="clear-saved">Clear saved data</button><p class="quiet">Clears this game only, not browser cache, history, or other sites.</p></section>
+    <p class="feedback" id="settings-feedback" role="status" aria-live="polite"></p>
+  </dialog>
+</body>
+</html>

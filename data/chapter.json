@@ -1,0 +1,140 @@
+{
+  "id": "case-001",
+  "title": "The accidental revolutionary",
+  "intro": "One curious mind. Two world-changing inventions. One very unlikely mascot. Restore four pieces of evidence and discover the person behind them.",
+  "games": [
+    {
+      "id": "loop",
+      "type": "loop",
+      "title": "A message on repeat",
+      "artifact": "Recovered fragment / home computer",
+      "instructions": "Make the computer display a message, then return to the first instruction to display it again. Put the two commands in the right order, then run your program.",
+      "config": {
+        "commands": [
+          { "id": "display", "label": "PRINT \"SARA IS THE BEST\"", "description": "Display the message once." },
+          { "id": "repeat", "label": "GOTO FIRST LINE", "description": "Go back to the first instruction." }
+        ],
+        "correctOrder": ["display", "repeat"],
+        "message": "SARA IS THE BEST"
+      },
+      "explanation": "According to his sister Sara's recollection, the mystery creator once showed her a little BASIC program that repeatedly printed a message praising her. He learned on his grandfather's Commodore VIC-20. A loop repeats instructions: your two-line reconstruction illustrates the idea, not a verified transcript of his original program. Nor can we establish that it was his first-ever program.",
+      "clue": "The mystery creator was born in Helsinki, Finland, in 1969."
+    },
+    {
+      "id": "revisions",
+      "type": "revisions",
+      "title": "Nothing lost. Every version kept.",
+      "artifact": "Recovered fragment / project history",
+      "instructions": "Two helpful changes and one bad idea have landed on your desk. Select exactly two change cards to make the recovered document match the target. Select a card again to undo it.",
+      "config": {
+        "base": ["Hide ideas away.", "Overwrite every draft."],
+        "target": ["Share ideas openly.", "Keep every version."],
+        "cards": [
+          { "id": "share", "title": "Open the workshop", "line": 0, "text": "Share ideas openly.", "description": "Replace the first sentence." },
+          { "id": "delete", "title": "Travel light", "line": 1, "text": "Delete the old versions.", "description": "Replace the second sentence." },
+          { "id": "save", "title": "Keep a paper trail", "line": 1, "text": "Keep every version.", "description": "Replace the second sentence." }
+        ]
+      },
+      "explanation": "Version control keeps a history of changes so people can work together without losing earlier work. In 2005, this creator needed a better tool for a large software project. An early version was ready for kernel work in roughly ten days—but he had already spent months thinking about the problem. The document you repaired is a fictional illustration, not a historical commit.",
+      "clue": "In 2005, the mystery creator made a version-control tool called Git."
+    },
+    {
+      "id": "mascot",
+      "type": "mascot",
+      "title": "A rather well-fed suspect",
+      "artifact": "Recovered fragment / design brief",
+      "instructions": "A design note describes the missing mascot. Read the note, then choose its posture, expression, and shape. The illustration changes as you investigate.",
+      "config": {
+        "note": "Not a fierce bird holding up the world. Think friendly and cuddly: a rounded penguin, sitting down with a contented smile after a very large meal.",
+        "options": {
+          "posture": [{ "value": "standing", "label": "Standing tall" }, { "value": "seated", "label": "Sitting down" }],
+          "expression": [{ "value": "fierce", "label": "Fierce" }, { "value": "contented", "label": "Contented" }],
+          "shape": [{ "value": "lean", "label": "Lean" }, { "value": "rounded", "label": "Rounded" }]
+        },
+        "correct": { "posture": "seated", "expression": "contented", "shape": "rounded" }
+      },
+      "explanation": "The mystery creator liked penguins and recalled a small one nibbling him during a visit to Australia. When his project needed a mascot, he wanted something friendly and fun—not a corporate-looking emblem. Artist Larry Ewing drew the familiar penguin, Tux, in 1996. Your illustration interprets the brief; it is not Ewing's original artwork.",
+      "clue": "In 1991, the mystery creator began developing the Linux kernel."
+    },
+    {
+      "id": "system",
+      "type": "system",
+      "title": "More than the core",
+      "artifact": "Recovered fragment / system diagram",
+      "instructions": "A kernel is only one part of a complete system. Use the recovered guide to match each job with the right part. Each part is used once.",
+      "config": {
+        "parts": [
+          { "id": "kernel", "label": "Kernel", "description": "The core: manages memory and helps programs use hardware." },
+          { "id": "libraries", "label": "Libraries", "description": "Reusable routines that other programs can call instead of writing them again." },
+          { "id": "utilities", "label": "Utilities", "description": "Tools for everyday tasks, such as listing and copying files." }
+        ],
+        "jobs": [
+          { "id": "routines", "label": "A program needs a reusable text-handling routine.", "part": "libraries" },
+          { "id": "files", "label": "Someone wants to copy a file into another folder.", "part": "utilities" },
+          { "id": "memory", "label": "Two programs need memory and access to hardware.", "part": "kernel" }
+        ]
+      },
+      "explanation": "A usable operating system needs more than a kernel. The kernel manages memory and hardware; libraries offer reusable routines, and utilities handle everyday jobs such as copying files. Linux is the kernel, not the entire operating system. Many distributions combine it with GNU components and other software. Your restored diagram shows three roles in that bigger system.",
+      "clue": "The name ‘Linux’ combines the creator’s first name with ‘Unix’."
+    }
+  ],
+  "identityChoices": ["Linus Torvalds", "Tim Berners-Lee", "Grace Hopper", "Margaret Hamilton"],
+  "identityAnswer": "Linus Torvalds",
+  "biography": "Born in Helsinki in 1969, Linus Torvalds began developing the Linux kernel in 1991 while studying at the University of Helsinki. He shared the source, inviting other programmers to improve it. Linux grew into a worldwide collaborative project. In 2005 he created Git to help manage software development; its continued development owes much to Junio Hamano and other contributors.",
+  "achievements": [
+    { "year": "1991", "title": "A kernel with a global future", "text": "Started Linux, the core software used in many operating systems. A kernel is not a complete operating system; other components make the system usable." },
+    { "year": "2005", "title": "A better way to work together", "text": "Created Git, a distributed version-control tool. Git and GitHub are different: GitHub is one of the services built around Git." }
+  ],
+  "quote": "just a hobby, won't be big and professional like gnu",
+  "quoteContext": "His announcement, 25 August 1991. Some hobbies have a way of growing.",
+  "bonusEvidence": {
+    "title": "The unfiltered file",
+    "introduction": "The mystery creator became known for blunt feedback, profanity, and personal insults in public discussions. These excerpts show that side of his personality. Optional reading only: no questions, clues, or points. Source links open in a new tab and may reveal the creator's name.",
+    "items": [
+      {
+        "title": "A personal insult",
+        "context": "From the class presentation. Wording preserved as supplied by its author.",
+        "quotes": ["You should be retroactively aborted, because maybe you were too stupid to find a tit to suck on when you were young"],
+        "source": { "title": "Class presentation — supplied quotation" }
+      },
+      {
+        "title": "A kernel update that was not tested",
+        "context": "13 July 2013 — Re: [GIT pull] x86 updates for 3.11. Criticism of a commit marked for the stable kernel.",
+        "quotes": ["This piece-of-shit commit is marked for stable, but you clearly never even test-compiled it, did you?"],
+        "source": { "title": "Read the original email", "url": "https://lkml.iu.edu/hypermail/linux/kernel/1307.1/03003.html" }
+      },
+      {
+        "title": "No love for C++",
+        "context": "6 September 2007 — A Git mailing-list reply about using C rather than C++. Two excerpts from the same email.",
+        "quotes": [
+          "*YOU* are full of bullshit.",
+          "C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it."
+        ],
+        "source": { "title": "Read the original email", "url": "https://public-inbox.org/git/alpine.LFD.0.999.0709061839510.5626@evo.linux-foundation.org/" }
+      },
+      {
+        "title": "Colors with consequences",
+        "context": "22 June 2006 — Re: What's in git.git and announcing v1.4.1-rc1. Feedback on Git's colorized differences between file versions.",
+        "quotes": ["I like colorized diffs, but let's face it, those particular color choices will make most people decide to pick out their eyes with a fondue fork."],
+        "source": { "title": "Read the original email", "url": "https://public-inbox.org/git/Pine.LNX.4.64.0606221301500.5498@g5.osdl.org/" }
+      }
+    ]
+  },
+  "portrait": {
+    "path": "assets/portrait.jpg",
+    "author": "Notsoimp2012",
+    "description": "Linus Torvalds at the 2018 IEEE Masaru Ibuka Consumer Electronics Award presentation",
+    "source": "https://commons.wikimedia.org/wiki/File:Linus-Torvalds_IEEE_Ibuka_Award_2018_(cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "modifications": "Previously cropped on Wikimedia Commons by 1992 FARHAAD. Bundled without further modification."
+  },
+  "sources": [
+    { "title": "The early BASIC story — an attributed recollection", "url": "https://fossbytes.com/my-first-line-of-code-linux-creator-linus-torvalds/" },
+    { "title": "Lemelson-MIT: Linus Torvalds", "url": "https://lemelson.mit.edu/resources/linus-torvalds" },
+    { "title": "Git turns 20: a direct interview with its creator", "url": "https://github.blog/open-source/git/git-turns-20-a-qa-with-linus-torvalds/" },
+    { "title": "Original penguin design discussion, 9 May 1996", "url": "https://lkml.iu.edu/hypermail/linux/kernel/9605/0855.html" },
+    { "title": "History of Tux and the penguin recollections", "url": "https://landley.net/history/mirror/linux/tux.html" },
+    { "title": "Linux history: the original 1991 announcement", "url": "https://www.cs.cmu.edu/~awb/linux.history.html" }
+  ]
+}
