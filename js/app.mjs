@@ -125,7 +125,7 @@ function renderIntro(focus = false) {
           <div class="overview-stat"><strong>∞</strong><span>chances to get it right</span></div>
         </div>
         <div class="dossier-open"><p class="quiet">Take your time. No timer. No rush.</p><button type="button" class="button button-primary" data-action="start" id="open-case">${original ? 'Replay case' : 'Open case file'} <span aria-hidden="true">↗</span></button></div>
-        <section class="original-panel" id="original-panel" hidden><p id="original-result"></p><button type="button" class="button button-small" data-action="view-saved">View solved case</button><button type="button" class="button button-secondary" data-action="bonus" hidden>Bonus evidence</button></section>
+        <section class="original-panel" id="original-panel" hidden><p id="original-result"></p><button type="button" class="button button-small" data-action="view-saved">View solved case</button><button type="button" class="button button-bonus" data-action="bonus" hidden><span aria-hidden="true">✦</span> Bonus evidence</button></section>
       </footer>
     </article>`, 'intro');
   $('#screen-title').textContent = chapter.title;
@@ -182,7 +182,7 @@ function renderStory() {
       <section class="story-copy"><div class="evidence-label">What really happened</div><p id="story-text"></p></section>
       <button type="button" class="button button-primary" data-action="clue">Reveal clue</button>
       <p class="quiet">Your clue appears only when you are ready.</p>
-      <button type="button" class="button button-secondary bonus-entry" data-action="bonus" hidden>Bonus evidence</button>
+      <button type="button" class="button button-bonus bonus-entry" data-action="bonus" hidden><span aria-hidden="true">✦</span> Bonus evidence</button>
     </div>`, 'story');
   $('#screen-title').textContent = activeGame.title;
   $('#story-text').textContent = activeGame.explanation;
@@ -278,7 +278,7 @@ function renderResult(score, message) {
       <section class="reveal-copy"><p class="eyebrow">THE MIND BEHIND THE MYSTERY</p><h1 id="screen-title"></h1><p id="biography"></p><div class="achievements" id="achievements"></div></section>
     </div>
     <figure class="original-quote"><blockquote id="original-quote"></blockquote><figcaption id="quote-context"></figcaption></figure>
-    <div class="result-actions"><button type="button" class="button button-primary" data-action="start">Replay case <span aria-hidden="true">↗</span></button><button type="button" class="button button-secondary" data-action="notebook">Revisit the evidence</button><button type="button" class="button button-secondary" data-action="bonus" hidden>Bonus evidence</button><button type="button" class="button button-secondary" data-action="home">Back to case file</button></div>
+    <div class="result-actions"><button type="button" class="button button-primary" data-action="start">Replay case <span aria-hidden="true">↗</span></button><button type="button" class="button button-secondary" data-action="notebook">Revisit the evidence</button><button type="button" class="button button-bonus" data-action="bonus" hidden><span aria-hidden="true">✦</span> Bonus evidence</button><button type="button" class="button button-secondary" data-action="home">Back to case file</button></div>
     <p class="quiet" id="saved-status" role="status"></p>
     <details class="case-glossary">
       <summary>Case glossary</summary>

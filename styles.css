@@ -159,6 +159,8 @@ small { line-height: 1.5; }
 .button-primary:not(:disabled):hover { background: var(--button-hover); }
 .button-secondary { background: transparent; color: var(--accent); border-color: var(--secondary-border); }
 .button-secondary:not(:disabled):hover { background: var(--accent-soft); }
+.button-bonus { gap: .6em; background: var(--orange); color: var(--button-text); border-color: var(--orange); font-weight: 700; }
+.button-bonus:not(:disabled):hover { box-shadow: 0 0 0 2px var(--orange); }
 .button-danger { color: var(--danger); background: var(--danger-paper); border-color: var(--danger-border); }
 .button-small { min-height: 40px; padding: 9px 14px; background: var(--surface-raised); color: var(--accent); border-color: var(--line); font-size: .75rem; }
 .button:disabled { opacity: .58; }
